@@ -1,0 +1,110 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>공지사항 | 숭이고등학교</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 학교 상단 -->
+    <header class="school-header">
+        <div class="header-inner">
+
+            <div class="school-logo">
+                <a href="index.html">
+                    <img src="image/logo.png"
+                         alt="숭이고등학교 로고"
+                         class="school-logo-img">
+                </a>
+
+                <div class="school-name">
+                    <h1>숭이고등학교</h1>
+                    <p>SOONG HIGH SCHOOL</p>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="top-links">
+                    <a href="index.html">HOME</a>
+                    <span>|</span>
+                    <a href="board.html">공지사항</a>
+                    <span>|</span>
+                    <a href="graduation.html">졸업식 안내</a>
+                </div>
+
+                <form class="search-box" role="search"
+                      onsubmit="return false;">
+                    <input type="search"
+                           placeholder="검색어 입력">
+                    <button type="submit">검색</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메뉴바 -->
+    <nav class="main-nav">
+        <div class="nav-inner">
+            <a href="intro.html">학교소개</a>
+            <a href="student.html">학생생활</a>
+            <a href="graduation.html">졸업식 안내</a>
+            <a href="board.html">열린광장</a>
+        </div>
+    </nav>
+
+    <!-- 게시판 -->
+   
+<main class="guestbook-page">
+
+    <div class="guestbook-location">
+        HOME &gt; 열린광장 &gt; 방명록
+    </div>
+
+    <h2 class="guestbook-title">방명록</h2>
+
+    <p class="guestbook-intro">
+        🎓 에이나의 열아홉 번째 생일을 축하해 주세요!
+    </p>
+
+    <form id="guestbook-form" class="guestbook-form">
+        <label for="nickname">닉네임</label>
+        <input
+            type="text"
+            id="nickname"
+            maxlength="20"
+            placeholder="닉네임을 입력해 주세요"
+            required
+        >
+
+        <label for="message">축하 메시지</label>
+        <textarea
+            id="message"
+            maxlength="300"
+            placeholder="에이나에게 전하고 싶은 말을 남겨 주세요!"
+            required
+        ></textarea>
+
+        <button type="submit">방명록 작성하기</button>
+    </form>
+
+    <h3 class="guestbook-list-title">축하 메시지</h3>
+
+    <div id="guestbook-list">
+        <p>방명록을 불러오는 중입니다.</p>
+    </div>
+
+</main>
+
+    <footer>
+        <p>SOONG HIGH SCHOOL</p>
+        <p>비공식 팬 제작 생일 이벤트 사이트입니다.</p>
+    </footer>
+
+<script type="module" src="guestbook.js"></script>
+</body>
+</html>

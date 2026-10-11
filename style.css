@@ -1,0 +1,844 @@
+﻿
+/* =====================================
+   SOONG HIGH SCHOOL
+   숭이고등학교 공식 홈페이지 컨셉
+   MAIN COLOR: #F39832
+===================================== */
+
+
+@import url('https://cdn.jsdelivr.net/gh/fonts-archive/NanumBarunGothic/NanumBarunGothic.css');
+
+
+/* 기본 설정 */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f1f3f5;
+
+    font-family: 'NanumBarunGothic', 'Malgun Gothic', sans-serif;
+    font-size: 14px;
+    color: #333333;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =====================================
+   1. 학교 상단 헤더
+===================================== */
+
+.school-header {
+    background-color: #ffffff;
+    color: #222222;
+    padding: 0;
+    border-bottom: none;
+}
+
+.header-inner {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 22px 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 학교 로고와 이름 */
+.school-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* 임시 로고 영역 */
+.logo-placeholder {
+    width: 65px;
+    height: 65px;
+
+    border: 1px solid #cccccc;
+    background-color: #f8f8f8;
+    color: #999999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12px;
+}
+
+/* 실제 학교 로고 이미지 */
+.school-logo-img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
+}
+
+/* 학교 이름 */
+.school-name h1 {
+    margin: 0;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: #222222;
+}
+
+.school-name p {
+    margin: 5px 0 0;
+    font-size: 11px;
+    color: #888888;
+    letter-spacing: 1px;
+}
+
+/* =====================================
+   2. 오른쪽 상단 메뉴
+===================================== */
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+/* HOME / 공지사항 / 졸업식 안내 */
+.top-links {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-size: 11px;
+    color: #777777;
+}
+
+.top-links a:hover {
+    color: #F39832;
+}
+
+/* 검색창 */
+.search-box {
+    display: flex;
+    height: 30px;
+}
+
+.search-box input {
+    width: 160px;
+    min-width: 0;
+    border: 1px solid #cccccc;
+    padding: 5px 8px;
+    font-size: 12px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #F39832;
+}
+
+.search-box button {
+    background-color: #777777;
+    color: #ffffff;
+    border: none;
+    padding: 0 12px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #F39832;
+}
+
+/* =====================================
+   3. 학교 메인 메뉴바
+===================================== */
+
+.main-nav {
+    background-color: #F39832;
+    border-bottom: 3px solid #D77B1C;
+}
+
+.nav-inner {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.nav-inner a {
+    flex: 1;
+    padding: 18px 10px;
+
+    text-align: center;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+
+    border-right: 1px solid #E78A25;
+}
+
+.nav-inner a:first-child {
+    border-left: 1px solid #E78A25;
+}
+
+.nav-inner a:hover {
+    background-color: #D77B1C;
+}
+
+/* =====================================
+   4. 메인 콘텐츠
+===================================== */
+
+main {
+    max-width: 1050px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+
+/* =====================================
+   5. 졸업식 메인 배너
+===================================== */
+
+.banner {
+    background-color: #FFF1DE;
+    border: 1px solid #F3D4AA;
+
+    text-align: center;
+    padding: 70px 20px;
+    margin-bottom: 20px;
+}
+
+.banner h2 {
+    margin: 0 0 25px;
+    font-size: 36px;
+    color: #C66A17;
+}
+
+.banner p {
+    font-size: 15px;
+    color: #555555;
+    margin: 0;
+}
+
+/* =====================================
+   6. 학교 콘텐츠 영역
+===================================== */
+
+section:not(.banner) {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+section:not(.banner) h2 {
+    margin-top: 0;
+    padding-bottom: 12px;
+
+    font-size: 22px;
+    color: #333333;
+    border-bottom: 2px solid #F39832;
+}
+
+section:not(.banner) p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555555;
+}
+
+/* =====================================
+   7. 홈페이지 하단
+===================================== */
+
+footer {
+    background-color: #f5f5f5;
+    color: #777777;
+
+    text-align: center;
+    padding: 20px;
+
+    border-top: 1px solid #cccccc;
+    font-size: 11px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* =====================================
+   8. 모바일 화면 대응
+===================================== */
+
+@media (max-width: 650px) {
+
+    .header-inner {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 12px;
+    }
+
+    .school-logo {
+        justify-content: center;
+    }
+
+    .school-logo-img,
+    .logo-placeholder {
+        width: 55px;
+        height: 55px;
+    }
+
+    .school-name h1 {
+        font-size: 22px;
+    }
+
+    .header-right {
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-inner {
+        flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+        flex: 1 1 33.33%;
+        font-size: 12px;
+        padding: 14px 5px;
+    }
+
+    main {
+        margin: 15px auto;
+        padding: 0 10px;
+    }
+
+    .banner {
+        padding: 50px 15px;
+    }
+
+    .banner h2 {
+        font-size: 27px;
+    }
+
+    section:not(.banner) {
+        padding: 20px;
+    }
+
+    section:not(.banner) h2 {
+        font-size: 19px;
+    }
+}
+
+
+
+/* =====================================
+   공지사항 상세 페이지
+===================================== */
+
+.notice-page {
+    background-color: #ffffff;
+    min-height: 600px;
+    padding: 40px;
+    border: 1px solid #dddddd;
+}
+
+/* 현재 위치 */
+.breadcrumb {
+    text-align: right;
+    color: #888888;
+    font-size: 12px;
+    margin-bottom: 35px;
+}
+
+/* 공지사항 제목 */
+.notice-page-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* 게시글 제목 */
+.article-title {
+    text-align: center;
+    font-size: 21px;
+    font-weight: normal;
+    padding: 25px 10px;
+    margin: 0;
+    border-top: 2px solid #F39832;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* 작성자 및 등록일 */
+.article-info {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    background-color: #f7f7f7;
+    padding: 18px;
+    color: #666666;
+    font-size: 13px;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* 게시글 본문 */
+.article-content {
+    min-height: 300px;
+    padding: 55px 20px;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.article-content p {
+    margin-bottom: 25px;
+}
+
+/* 목록으로 버튼 */
+.article-buttons {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #dddddd;
+    padding-top: 20px;
+}
+
+.list-button {
+    display: inline-block;
+    background-color: #F39832;
+    color: #ffffff;
+    padding: 12px 25px;
+    font-size: 13px;
+}
+
+.list-button:hover {
+    background-color: #D77B1C;
+}
+
+@media (max-width: 650px) {
+    .notice-page {
+        padding: 20px 15px;
+    }
+
+    .notice-page-title {
+        font-size: 25px;
+    }
+
+    .article-title {
+        font-size: 18px;
+    }
+
+    .article-info {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .article-content {
+        padding: 30px 5px;
+    }
+}
+
+
+/* =====================================
+   열린광장 - 공지사항 게시판
+===================================== */
+
+.board-page {
+    background-color: #ffffff;
+    min-height: 650px;
+    padding: 40px 35px 70px;
+    border: 1px solid #dddddd;
+}
+
+/* 현재 위치 */
+.board-location {
+    text-align: right;
+    font-size: 12px;
+    color: #888888;
+    margin-bottom: 40px;
+}
+
+/* 게시판 제목 */
+.board-heading {
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+    color: #222222;
+    margin: 0 0 60px;
+}
+
+/* 작은 화면에서 표 가로 스크롤 */
+.board-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* 게시판 표 */
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-top: 2px solid #F39832;
+    font-size: 14px;
+}
+
+/* 표 제목 */
+.board-table th {
+    background-color: #f7f8fa;
+    color: #333333;
+    font-weight: normal;
+    padding: 20px 12px;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* 게시글 행 */
+.board-table td {
+    padding: 22px 12px;
+    text-align: center;
+    color: #555555;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* 각 열 너비 */
+.board-number {
+    width: 90px;
+}
+
+.board-author {
+    width: 140px;
+}
+
+.board-date {
+    width: 115px;
+}
+
+.board-views {
+    width: 75px;
+}
+
+/* 게시글 제목은 왼쪽 정렬 */
+.board-table td.board-post-title {
+    text-align: left;
+    color: #333333;
+    overflow-wrap: anywhere;
+}
+
+/* 클릭할 수 있는 제목 */
+.board-post-title a {
+    color: #333333;
+}
+
+.board-post-title a:hover {
+    color: #F39832;
+    text-decoration: underline;
+}
+
+/* 공지 표시 */
+.notice-label {
+    display: inline-block;
+    background-color: #F39832;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+/* 마우스를 올린 행 */
+.board-table tbody tr:hover {
+    background-color: #fffaf3;
+}
+
+/* 모바일 대응 */
+@media (max-width: 650px) {
+    .board-page {
+        padding: 25px 15px;
+    }
+
+    .board-heading {
+        font-size: 25px;
+        margin-bottom: 35px;
+    }
+
+    .board-table {
+        min-width: 680px;
+    }
+}
+
+
+/* =====================================
+   학교소개 - 교육목표 페이지
+===================================== */
+
+.intro-page {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 40px;
+    min-height: 700px;
+}
+
+/* 현재 위치 */
+.intro-location {
+    text-align: right;
+    font-size: 12px;
+    color: #888888;
+    margin-bottom: 35px;
+}
+
+/* 페이지 제목 */
+.intro-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0 0 45px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* 교육목표 전체 테두리 */
+.education-box {
+    max-width: 850px;
+    margin: 0 auto;
+    border: 1px solid #dddddd;
+    border-radius: 25px;
+    padding: 25px 35px 40px;
+}
+
+/* 주황색 제목 */
+.education-heading {
+    background-color: #F39832;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 17px;
+    margin: 0 0 25px;
+}
+
+/* 교훈, 비전, 교육목표 한 줄 */
+.education-row {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* 왼쪽 항목 이름 */
+.education-label {
+    border-top: 2px solid #F39832;
+    padding-top: 12px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 오른쪽 내용 */
+.education-value {
+    min-width: 0;
+}
+
+/* 교훈 */
+.motto {
+    border: 1px solid #F39832;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+    color: #C66A17;
+}
+
+/* 교육 비전 */
+.vision {
+    background-color: #FFF1DE;
+    border-radius: 12px;
+    padding: 17px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #92531C;
+}
+
+/* 카드 배열 */
+.education-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* 카드 기본 */
+.education-card {
+    flex: 1 1 130px;
+    min-width: 0;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+/* 카드 제목 */
+.education-card h4 {
+    margin: 0;
+    padding: 12px 6px;
+    font-size: 14px;
+}
+
+/* 카드 설명 */
+.education-card p {
+    margin: 0;
+    padding: 18px 8px;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* 카드별 색상 */
+.education-card.blue {
+    border-color: #B5D4F2;
+}
+
+.education-card.blue h4 {
+    background-color: #DCEAF9;
+}
+
+.education-card.green {
+    border-color: #B9D99B;
+}
+
+.education-card.green h4 {
+    background-color: #E4F1D5;
+}
+
+.education-card.orange {
+    border-color: #F2CBAA;
+}
+
+.education-card.orange h4 {
+    background-color: #FBE6D4;
+}
+
+.education-card.purple {
+    border-color: #CDC2F2;
+}
+
+.education-card.purple h4 {
+    background-color: #E9E4FA;
+}
+
+/* 모바일 */
+@media (max-width: 650px) {
+    .intro-page {
+        padding: 20px 12px;
+    }
+
+    .intro-title {
+        font-size: 25px;
+    }
+
+    .education-box {
+        padding: 18px 12px;
+    }
+
+    .education-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .education-cards {
+        gap: 8px;
+    }
+
+    .education-card {
+        flex-basis: 120px;
+    }
+}
+
+
+/* 방명록 페이지 */
+
+.guestbook-page {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 40px;
+}
+
+.guestbook-location {
+    text-align: right;
+    font-size: 12px;
+    color: #888;
+}
+
+.guestbook-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 35px 0;
+}
+
+.guestbook-intro {
+    text-align: center;
+    padding: 20px;
+    background: #FFF1DE;
+    color: #99591D;
+}
+
+.guestbook-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 30px 0 45px;
+}
+
+.guestbook-form input,
+.guestbook-form textarea {
+    padding: 13px;
+    border: 1px solid #ccc;
+    font: inherit;
+}
+
+.guestbook-form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.guestbook-form button {
+    background: #F39832;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.guestbook-form button:hover {
+    background: #D77B1C;
+}
+
+.guestbook-list-title {
+    border-bottom: 2px solid #F39832;
+    padding-bottom: 15px;
+}
+
+.guestbook-entry {
+    padding: 20px 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.guestbook-entry strong {
+    color: #B16E2B;
+}
+
+.guestbook-entry p {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
