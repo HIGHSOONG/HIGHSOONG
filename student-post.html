@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>학생생활 게시글 | 숭이고등학교</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="student-gallery.css">
+</head>
+
+<body>
+    <header class="school-header">
+        <div class="header-inner"><a class="school-logo" href="index.html"><img class="school-logo-img"
+                    src="image/logo.png" alt="숭이고등학교 로고">
+                <div class="school-name">
+                    <h1>숭이고등학교</h1>
+                    <p>SOONG HIGH SCHOOL</p>
+                </div>
+            </a>
+            <div class="header-right">
+                <div class="top-links"><a href="index.html">HOME</a><span>|</span><a
+                        href="news.html">학교소식</a><span>|</span><a href="graduation.html">졸업식 안내</a></div>
+            </div>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <div class="nav-inner"><a href="intro.html">학교소개</a><a href="news.html">학교소식</a><a
+                href="student.html">학생생활</a><a href="graduation.html">졸업식 안내</a><a href="board.html">열린광장</a></div>
+    </nav>
+    <main>
+        <div class="student-detail-page">
+            <div class="student-location">HOME &gt; 학생생활 &gt; 포토갤러리</div>
+            <h2 class="student-heading">학생생활</h2>
+            <article class="student-article" id="student-article"></article>
+            <div class="student-comments" id="student-comments"></div>
+            <div class="student-back"><a href="student.html">목록으로</a></div>
+        </div>
+    </main>
+    <footer>
+        <p>SOONG HIGH SCHOOL</p>
+        <p>비공식 팬 제작 생일 이벤트 사이트입니다.</p>
+    </footer>
+    <script src="student-posts.js"></script>
+    <script>const id = new URLSearchParams(location.search).get('id'); const post = STUDENT_POSTS.find(p => p.id === id); const article = document.getElementById('student-article'), comments = document.getElementById('student-comments'); function el(tag, cls, txt) { const e = document.createElement(tag); if (cls) e.className = cls; if (txt !== undefined) e.textContent = txt; return e } function comment(c, reply = false) { const wrap = el('div', reply ? 'student-reply' : 'student-comment'); const head = el('div', 'student-comment-head'); head.append(el('strong', '', c.name), el('time', '', c.date)); wrap.append(head, el('p', '', c.text), el('div', 'student-comment-actions', '♡ 좋아요 ' + c.likes)); if (c.reply) wrap.append(comment(c.reply, true)); return wrap } if (!post) { article.append(el('h3', 'student-article-title', '게시물을 찾을 수 없습니다.')) } else { document.title = post.title + ' | 숭이고등학교'; article.append(el('h3', 'student-article-title', post.title)); const meta = el('div', 'student-article-meta'); meta.append(el('span', '', '작성자 ' + post.author), el('span', '', '등록일 ' + post.date)); article.append(meta); const body = el('div', 'student-article-body'); for (const src of post.images) { const img = el('img'); img.src = src; img.alt = post.title; img.onerror = () => img.remove(); body.append(img) } body.append(el('p', '', post.body)); article.append(body); const h = el('h3', ''); h.append('댓글 ', el('span', '', String(post.comments.length))); comments.append(h); for (const c of post.comments) comments.append(comment(c)); if (!post.comments.length) comments.append(el('p', 'student-comment-note', '아직 댓글이 없습니다.')); comments.append(el('p', 'student-comment-note', '※ 댓글과 좋아요는 연출용으로, 실제로 작성되거나 저장되지 않습니다.')) }</script>
+</body>
+
+</html>

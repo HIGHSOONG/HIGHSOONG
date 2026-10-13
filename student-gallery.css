@@ -1,0 +1,195 @@
+/* 학생생활 갤러리 전용 — 기존 style.css 다음에 연결 */
+.student-gallery-page,.student-detail-page{background:#fff;border:1px solid #ddd;padding:40px 35px 65px;min-height:650px}
+.student-location{text-align:right;color:#888;font-size:12px;margin-bottom:30px}
+.student-heading{text-align:center;font-size:30px;font-weight:400;margin:0 0 14px}
+.student-subtitle{text-align:center;color:#777;margin:0 0 35px}
+.student-gallery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 18px;border-top:2px solid #243B60;padding-top:28px}
+.student-gallery-card{display:block;border:1px solid #d7dce4;background:#fff;transition:box-shadow .15s,transform .15s;overflow:hidden}
+.student-gallery-card:hover{box-shadow:0 5px 16px #192d4b20;transform:translateY(-2px)}
+.student-gallery-thumb{display:block;width:100%;aspect-ratio:1.6;object-fit:cover;background:linear-gradient(135deg,#e9eef5,#ccd6e5)}
+.student-gallery-card-body{padding:19px 10px 20px;text-align:center}
+.student-gallery-card-title{display:block;font-size:15px;font-weight:600;color:#222;line-height:1.5;min-height:45px}
+.student-gallery-card-date{display:block;color:#999;font-size:13px;margin-top:8px}
+.student-article{border-top:2px solid #243B60}
+.student-article-title{text-align:center;margin:0;padding:27px 10px;font-size:23px;font-weight:500}
+.student-article-meta{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;background:#f7f8fa;border-top:1px solid #ddd;border-bottom:1px solid #ddd;color:#777;font-size:13px;padding:16px}
+.student-article-body{padding:35px 10px 55px;font-size:15px;line-height:1.9}
+.student-article-body img{display:block;width:100%;height:auto;margin:0 auto 24px}
+.student-article-body p{white-space:pre-line;margin:0 0 18px}
+.student-comments{border-top:1px solid #ddd;padding-top:20px}
+.student-comments h3{font-size:18px;font-weight:600;margin:0 0 16px}
+.student-comments h3 span{color:#243B60}
+.student-comment{border-top:1px solid #e5e5e5;padding:20px 10px}
+.student-comment-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.student-comment-head time{font-size:12px;color:#999}
+.student-comment p{margin:10px 0;color:#444;white-space:pre-line}
+.student-comment-actions{font-size:12px;color:#999}
+.student-reply{margin:17px 0 0 24px;padding:15px 20px;background:#f7f8fa;border-left:3px solid #243B60}
+.student-comment-note{font-size:12px;color:#999;margin-top:14px}
+.student-back{text-align:right;margin-top:30px}
+.student-back a{display:inline-block;padding:11px 23px;background:#243B60;color:#fff;border-radius:3px}
+.student-back a:hover{background:#192D4B}
+@media(max-width:850px){.student-gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.student-gallery-page,.student-detail-page{padding:24px 15px 40px}.student-heading{font-size:25px}.student-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px}.student-gallery-card-body{padding:12px 7px}.student-gallery-card-title{font-size:13px;min-height:40px}.student-gallery-card-date{font-size:12px}.student-article-title{font-size:20px}.student-article-meta{gap:8px 16px}.student-article-body{padding:25px 0 40px}.student-reply{margin-left:10px;padding:13px}}
+
+
+/* =========================================
+   학생생활 - 3학년 학급별 앨범
+========================================= */
+
+/* hidden 속성의 화면 전환 보장 */
+#class-selection[hidden],
+#class-album[hidden],
+#class-empty[hidden] {
+    display: none;
+}
+
+/* 학급 선택 제목 */
+.class-section-title {
+    margin: 0 0 25px;
+    padding: 15px 0;
+    border-top: 2px solid #243B60;
+    border-bottom: 1px solid #dddddd;
+    font-size: 19px;
+    font-weight: 500;
+    color: #333333;
+}
+
+/* 학급 카드 배열 */
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    padding: 10px 0 30px;
+}
+
+/* 학급 카드 */
+.class-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    min-height: 220px;
+    padding: 25px 15px;
+    border: 1px solid #d7dce4;
+    background: #ffffff;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.class-card:hover {
+    border-color: #243B60;
+    background: #f5f7fb;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(36, 59, 96, 0.12);
+}
+
+/* 카드 안 숫자 */
+.class-card-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #e9eef5;
+    color: #243B60;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* 학급 이름 */
+.class-card strong {
+    font-size: 22px;
+    color: #243B60;
+}
+
+/* 앨범 보기 문구 */
+.class-card > span:last-child {
+    font-size: 13px;
+    color: #888888;
+}
+
+/* 학급 앨범 상단 */
+.class-album-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.class-album-heading h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* 학급 선택으로 돌아가기 */
+.class-back-link {
+    color: #243B60;
+    font-size: 13px;
+}
+
+.class-back-link:hover {
+    text-decoration: underline;
+}
+
+/* 빈 앨범 안내 */
+.class-empty {
+    padding: 60px 10px;
+    text-align: center;
+    color: #888888;
+}
+
+/* 모바일 */
+@media (max-width: 650px) {
+    .class-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .class-card {
+        min-height: 145px;
+        gap: 8px;
+    }
+
+    .class-card-number {
+        width: 48px;
+        height: 48px;
+        font-size: 19px;
+    }
+
+    .class-card strong {
+        font-size: 18px;
+    }
+
+    .class-album-heading h3 {
+        font-size: 17px;
+    }
+}
+
+
+/* 앨범이 없는 학급 */
+.class-card-disabled {
+    background-color: #f8f9fb;
+    border-color: #e2e5ea;
+    cursor: default;
+}
+
+.class-card-disabled .class-card-number {
+    background-color: #e9eaed;
+    color: #999999;
+}
+
+.class-card-disabled strong {
+    color: #999999;
+}
+
+.class-card-disabled:hover {
+    background-color: #f8f9fb;
+    border-color: #e2e5ea;
+    box-shadow: none;
+    transform: none;
+}
