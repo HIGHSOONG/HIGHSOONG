@@ -73,7 +73,7 @@
                     <div class="class-card class-card-disabled">
                         <span class="class-card-number">01</span>
                         <strong>3학년 1반</strong>
-                        <span>앨범 준비 중</span>
+                        <span>우리 반 앨범 보기 →</span>
                     </div>
 
                     <!-- 3학년 2반: 클릭 가능 -->
@@ -87,7 +87,7 @@
                     <div class="class-card class-card-disabled">
                         <span class="class-card-number">03</span>
                         <strong>3학년 3반</strong>
-                        <span>앨범 준비 중</span>
+                        <span>우리 반 앨범 보기 →</span>
                     </div>
 
                 </div>
@@ -124,14 +124,14 @@
         // 기존 게시글을 학급별로 분류
         // 왼쪽은 게시글 ID, 오른쪽은 반 번호
         const postClasses = {
-            "01": 1,
-            "02": 1,
-            "03": 1,
-            "04": 2,
-            "05": 2,
-            "06": 2,
-            "07": 3,
-            "08": 3
+            "01": "2",
+            "02": "2",
+            "03": "2",
+            "04": "2",
+            "05": "2",
+            "06": "2",
+            "07": 2,
+            "08": 2
         };
 
         const params = new URLSearchParams(window.location.search);
@@ -159,9 +159,9 @@
             document.getElementById("class-album-title").textContent =
                 className + " 포토갤러리";
 
-            const posts = (window.STUDENT_POSTS || []).filter(post =>
-                postClasses[post.id] === Number(selectedClass)
-            );
+
+            const posts = window.STUDENT_POSTS || [];
+
 
             for (const post of posts) {
                 const card = document.createElement("a");
